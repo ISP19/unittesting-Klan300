@@ -15,9 +15,28 @@ class Fraction:
            and denominator (default 1).
         """
         #TODO write this (and remove this TODO comment)
-        self.numerator = numerator
-        self.denominator = denominator
+        gcd = math.gcd(numerator,denominator)
+        frac = numerator/denominator
+
+        if denominator == 0:
+            self.numerator = 1
+            self.denominator = 0
+        else:
+            if frac > 0:
+                self.numerator = abs(int(numerator/gcd))
+                self.denominator = abs(int(denominator/gcd))
+            elif frac < 0:
+                if denominator < 0:
+                    self.numerator = int(-numerator/gcd)
+                    self.denominator = abs(int(denominator/gcd))
+                else:
+                    self.numerator = int(numerator/gcd)
+                    self.denominator = int(denominator/gcd)
+            else:
+                self.numerator = int(numerator/gcd)
+                self.denominator = int(denominator/gcd)
         
+
 
     #TODO Write the __add__ method, and remove this TODO comment.
     def __add__(self, frac):
@@ -44,26 +63,11 @@ class Fraction:
         return Fraction(numerator,denominator)
 
     def __str__(self):
-        gcd = math.gcd(self.numerator,self.denominator)
-        self.numerator = int(self.numerator/gcd)
-        self.denominator = int(self.denominator/gcd)
-        frac = self.numerator/self.denominator
-        
-        if abs(self.denominator) == 1:
-            result = f"{int(self.numerator/self.denominator)}"
+        if self.denominator == 1:
+            result = f"{self.numerator}"
         else:
-            if frac == 0:
-                result = "0"
-            elif frac < 0 and self.denominator < 0:
-                result = f"{int(-self.numerator)}/{int(-self.denominator)}"
-            else:
-                if self.denominator < 0:
-                    result = f"{int(-self.numerator)}/{int(-self.denominator)}"
-                else:
-                    result = f"{int(self.numerator)}/{int(self.denominator)}"
+            result = f"{self.numerator}/{self.denominator}"
         return result
-
-
 
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.

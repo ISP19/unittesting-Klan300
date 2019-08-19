@@ -1,6 +1,6 @@
 import unittest
 from util import average
-import math
+
 # test by : python3 -m unittest math_test.py
 class MathTest( unittest.TestCase):
     def test_single_list(self):
