@@ -16,3 +16,7 @@ htmlcov/
 .project
 .pydevproject
 .vscode/
+
+# test project
+.test.py
+.util.py
