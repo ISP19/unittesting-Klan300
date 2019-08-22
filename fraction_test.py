@@ -48,3 +48,6 @@ class FractionTest(unittest.TestCase):
         # Consider special values like 0, 1/0, -1/0
 
 
+
+if __name__ == "__main__":
+    unittest.main('fraction_test')
