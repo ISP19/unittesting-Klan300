@@ -15,6 +15,17 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
+        if type(numerator) is not int:
+            if type(numerator) is not float:
+                raise TypeError("numerator is not int")  
+            elif not math.isnan(numerator):
+                raise TypeError("numerator is not int")  
+        if type(denominator) is not int :
+            if type(denominator) is not float:
+                raise TypeError("denominator is not int")  
+            if not math.isnan(denominator):
+                raise TypeError("denomiantor is not int")
+
         if denominator == 0 or math.isnan(numerator/denominator):
             self.numerator = math.nan
             self.denominator = math.nan
@@ -35,6 +46,8 @@ class Fraction:
                 self.numerator = int(numerator/gcd)
                 self.denominator = int(denominator/gcd)
 
+
+
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
            Use the standard formula  a/b + c/d = (ad+bc)/(b*d)
@@ -42,6 +55,9 @@ class Fraction:
         numerator = ((self.numerator * frac.denominator) +
                      (frac.numerator * self.denominator))
         denominator = self.denominator * frac.denominator
+
+
+
         return Fraction(numerator, denominator)
 
     # TODO write __mul__ and __str__.  Verify __eq__ works with your code.

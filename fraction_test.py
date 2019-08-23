@@ -7,6 +7,15 @@ from fraction import Fraction
 class FractionTest(unittest.TestCase):
     """Test the methods and constructor of the Fraction class. """
 
+    def test_init(self):
+        self.assertIsInstance(Fraction(2,3),Fraction)
+        with self.assertRaises(TypeError):
+            Fraction('n','b')
+        with self.assertRaises(TypeError):
+            Fraction(0,[])
+        with self.assertRaises(TypeError):
+            Fraction(0.3,3)
+        
     def test_str(self):
         f = Fraction(3, -1)
         self.assertEqual("-3", f.__str__())
@@ -25,6 +34,8 @@ class FractionTest(unittest.TestCase):
         # Constructor should provide default denominator = 1
         f = Fraction(99)
         self.assertEqual("99", f.__str__())
+        f = Fraction(0,0)
+        self.assertEqual("nan", f.__str__())
 
     # TODO Write tests for __init__, __eq__, +, *.
     # Here is an example, but you must add more test cases.  
@@ -33,8 +44,14 @@ class FractionTest(unittest.TestCase):
         # 3/4 = 2/3 + 1/12
         self.assertEqual(Fraction(3,4), Fraction(1,12)+Fraction(2,3))
         self.assertEqual(Fraction(18,20), Fraction(9,10) + Fraction(0,5))
-        self.assertEqual(Fraction(10,8), Fraction(3,4)+ Fraction(20,40)) 
+        self.assertEqual(Fraction(-1,4), Fraction(-3,4)+ Fraction(20,40)) 
         self.assertEqual(Fraction(2,0), Fraction(1,0)+ Fraction(0,0)) 
+
+    def test_mul(self):
+        self.assertEqual(Fraction(2,36), Fraction(1,12)*Fraction(2,3))
+        self.assertEqual(Fraction(2,36), Fraction(1,12).__mul__(Fraction(2,3)))
+        self.assertEqual(Fraction(2,0), Fraction(1,0)*Fraction(0,0)) 
+
 
 
     def test_eq(self):

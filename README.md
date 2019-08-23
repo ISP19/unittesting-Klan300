@@ -18,10 +18,38 @@ Write a table describing your test cases.
 
 ## Test Cases for Fraction
 
-| Test case              |  Expected Result    |
+| Test case(init)         |  Expected Result    |
 |------------------------|---------------------|
-| empty list             |  empty list         |
-| one item               |  list with 1 item   |
-| one item many times    |  list with 1 item   |
-| 2 items, many times, many orders | 2 item list, items in same order  |
-| what other test case?  |  what result?       |
+| with int type          |  instance Fraction class  |
+| not integer            |   typeError  |
+
+| Test case(str)         |  Expected Result    |
+|------------------------|---------------------|
+| positive integer       |  without minus symbol  |
+| negative integer       |  with minus symbol  |
+| divided by 1           |  wittout "/"        |
+| determinator is 0      |  Nan                |
+
+| Test case(add)         |  Expected Result    |
+|------------------------|---------------------|
+| add has answer with positve |  positive fraction |
+| add has answer with negative  |  negative fraction |
+| add with determinator is 0  |  Nan           |
+
+| Test case(multiply)         |  Expected Result    |
+|------------------------|---------------------|
+| mul has answer with positve |  positive fraction |
+| mul has answer with negative  |  negative fraction |
+| mul with determinator is 0  |  Nan           |
+
+| Test case(equal)         |  Expected Result    |
+|------------------------|---------------------|
+| same value not same number |  True |
+| not same value not same number |  False |
+
+
+
+
+
+
+
