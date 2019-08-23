@@ -34,6 +34,7 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(3,4), Fraction(1,12)+Fraction(2,3))
         self.assertEqual(Fraction(18,20), Fraction(9,10) + Fraction(0,5))
         self.assertEqual(Fraction(10,8), Fraction(3,4)+ Fraction(20,40)) 
+        self.assertEqual(Fraction(2,0), Fraction(1,0)+ Fraction(0,0)) 
 
 
     def test_eq(self):

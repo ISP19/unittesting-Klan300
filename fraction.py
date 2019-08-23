@@ -4,7 +4,7 @@ import math
 class Fraction:
     """A fraction with a numerator and denominator and arithmetic operations.
 
-    Fractions are always stored in proper form, without common factors in 
+    Fractions are always stored in proper form, without common factors in
     numerator and denominator, and denominator >= 0.
     Since Fractions are stored in proper form, each value has a
     unique representation, e.g. 4/5, 24/30, and -20/-25 have the same
@@ -15,13 +15,12 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
-        gcd = math.gcd(numerator, denominator)
-        frac = numerator/denominator
-
-        if denominator == 0:
-            self.numerator = 1
-            self.denominator = 0
+        if denominator == 0 or math.isnan(numerator/denominator):
+            self.numerator = math.nan
+            self.denominator = math.nan
         else:
+            gcd = math.gcd(numerator, denominator)
+            frac = numerator/denominator
             if frac > 0:
                 self.numerator = abs(int(numerator/gcd))
                 self.denominator = abs(int(denominator/gcd))
@@ -36,9 +35,6 @@ class Fraction:
                 self.numerator = int(numerator/gcd)
                 self.denominator = int(denominator/gcd)
 
-        return f"{self.numerator}/{self.denominator}"
-
-
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
            Use the standard formula  a/b + c/d = (ad+bc)/(b*d)
@@ -46,7 +42,6 @@ class Fraction:
         numerator = ((self.numerator * frac.denominator) +
                      (frac.numerator * self.denominator))
         denominator = self.denominator * frac.denominator
-
         return Fraction(numerator, denominator)
 
     # TODO write __mul__ and __str__.  Verify __eq__ works with your code.
@@ -55,30 +50,15 @@ class Fraction:
     # __gt__  for f > g
     # __neg__ for -f (negation)
 
-    def __sub__(self,frac):
-        numerator = ((self.numerator * frac.denominator) -
-                    (frac.numerator * self.denominator))
-        denominator = self.denominator * frac.denominator
-
-        return Fraction(numerator, denominator)
-
-    def __gt__(self,frac):
-        return (self.numerator * frac.denominator) > (self.denominator * frac.numerator)
-
-    def __neg__(self):
-        self.numerator *= -1
-        return Fraction(self.numerator, self.denominator)
-
     def __mul__(self, frac):
         """Multiply 2 fraction 
         """
         numerator = self.numerator * frac.numerator
         denominator = self.denominator * frac.denominator
-
         return Fraction(numerator, denominator)
 
     def __str__(self):
-        if self.denominator == 1:
+        if self.denominator == 1 or math.isnan(self.numerator/self.denominator):
             result = f"{self.numerator}"
         else:
             result = f"{self.numerator}/{self.denominator}"
