@@ -5,7 +5,7 @@ by Thun Thunkijjanikij
 
 ## Test Cases for unique
 
-[![Build Status](https://travis-ci.com/Klan300/unittesting-Klan300.svg?branch=master)](https://travis-ci.com/your_acctid/demo-pyci)
+[![Build Status](https://travis-ci.com/Klan300/unittesting-Klan300.svg?branch=master)](https://travis-ci.com/Klan300/unittesting-Klan300)
 
 Write a table describing your test cases.
 
