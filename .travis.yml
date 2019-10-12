@@ -9,4 +9,5 @@ install:
   - pip3 install -r requirements.txt
 
 script:
-  - "make test"
+  - "make test fraction_test.py"
+  - "make test listultil_test.py"
