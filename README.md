@@ -5,7 +5,7 @@ by Thun Thunkijjanikij
 
 ## Test Cases for unique
 
-[![Build Status](https://travis-ci.com/Klan300/unittesting-Klan300.svg?branch=master)](https://travis-ci.com/Klan300/unittesting-Klan300)
+[![Build Status](https://travis-ci.com/Klan300/unittesting-Klan300.svg?branch=master)](https://travis-ci.com/Klan300/unittesting-Klan300) [![codecov](https://codecov.io/gh/Klan300/unittesting-Klan300/branch/master/graph/badge.svg)](https://codecov.io/gh/Klan300/unittesting-Klan300)
 
 Write a table describing your test cases.
 
