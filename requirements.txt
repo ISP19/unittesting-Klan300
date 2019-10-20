@@ -1,2 +1,7 @@
+certifi==2019.9.11
+chardet==3.0.4
+codecov==2.0.15
 coverage==4.5.4
-CODECOV_TOKEN="fa52057b-ce1c-4d60-b242-bf8cd94cc707"
+idna==2.8
+requests==2.22.0
+urllib3==1.25.6
