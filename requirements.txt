@@ -1,0 +1,2 @@
+coverage==4.5.4
+CODECOV_TOKEN="fa52057b-ce1c-4d60-b242-bf8cd94cc707"
